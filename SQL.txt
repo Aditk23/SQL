@@ -11,4 +11,25 @@ Ans. select name from students where marks>75 order by substring(Name , LENGTH(N
 4. Write a query that prints a list of employee names (i.e.: the name attribute) for employees in Employee having a salary greater than 2000$ per month who have been employees for less than 10 months. Sort your result by ascending employee_id.
 Ans. select name from employee where salary>2000 and months<10 order by employee_id
 
-5.
+5.Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. Output one of the following statements for each record in the table:
+Equilateral: It's a triangle with  sides of equal length.
+Isosceles: It's a triangle with  sides of equal length.
+Scalene: It's a triangle with  sides of differing lengths.
+Not A Triangle: The given values of A, B, and C don't form a triangle.
+Ans. Select  CASE when A + B <= C OR A + C <= B OR B + C <= A
+	then 'Not A Triangle'
+	when A = B AND B = C
+	then 'Equilateral'
+	when A = B OR A = C OR B = C
+	then 'Isosceles'
+	else 'Scalene'
+	END
+	from TRIANGLES
+
+6. Query the total population of all cities in CITY where District is California.
+Ans. select SUM(population) from city where district='California'
+
+7. Query the difference between the maximum and minimum populations in CITY.
+Ans. select MAX(population) - MIN(population) from city
+
+8. 
